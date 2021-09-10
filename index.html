@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>200 to 1000000 project</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+
+<body>
+    <div class="container">
+        <canvas id="myChart"></canvas>
+    </div>
+
+    <script>
+        let myChart = document.getElementById('myChart').getContext('2d');
+
+        // 配置全局默认信息
+        Chart.defaults.global.defaultFontFamily = 'Lato';
+        Chart.defaults.global.defaultFontSize = 13;
+        Chart.defaults.global.defaultFontColor = '#234';
+        Chart.defaults.global.responsive = true;
+
+        // 实例化Chart对象
+        let chart = new Chart(myChart, {
+            // type: 'bar',
+            type: 'line',
+            data: {
+                labels: ["2021.08.02","2021.08.02","2021.08.02","2021.08.03","2021.08.06","2021.08.10","2021.08.10","2021.08.13",
+                "2021.08.13","2021.08.17","2021.08.17","2021.08.18","2021.08.19","2021.08.19","2021.08.20","2021.08.20",
+                "2021.08.23","2021.08.23","2021.08.26","2021.08.26","2021.08.26","2021.09.07","2021.09.07","2021.09.08","2021.09.08"],
+                datasets: [
+                  {
+                    label: "结余（USD）",
+                    fillColor: "rgba(151,187,205,0.2)",
+                    strokeColor: "rgba(151,187,205,1)",
+                    pointColor: "rgba(151,187,205,1)",
+                    pointStrokeColor: "#fff",
+                    pointHighlightFill: "#fff",
+                    pointHighlightStroke: "rgba(151,187,205,1)",
+                    data: [30.95, 34.78, 37.90, 26.43, 26.77, 21.57, 16.36, 19.03, 22.99, 25.30, 29.06, 29.59, 31.73, 33.90, 33.70, 36.22, 45.01, 55.20, 57.95, 60.76, 61.54, 66.53, 71.56, 73.36, 73.62]
+                  }
+                ]
+            },
+            options: {
+                title: {
+                    display: true,
+                    text: "收益曲线图（USD）",
+                    fontSize: 22,
+                },
+                legend: {
+                    display: false,
+                    position: 'right',
+                    labels: {
+                        fontColor: '#f00',
+                    }
+                },
+                layout: {
+                    padding: {
+                        left: 50,
+                        right: 0,
+                        bottom: 0,
+                        top: 0,
+                    }
+                },
+                tooltips: {
+                    enabled: true,
+                }
+            }
+        })
+    </script>
+
+    <!-- about -->
+    <div id="content" style="margin-left: 16%;margin-top: 20px;margin-right: 11.5%;font-size: smaller;background-color: cornsilk;height: 80px;">
+      <div id="about" style="margin-left: 16px;margin-right: 16px;margin-bottom: 16px;">
+        <br/>
+        <b>“200 to 1000000”</b> 是一个外汇实盘交易项目，此项目从2021年8月2日启动，入金30.95 USD，兑换人命币为200元，也是本项目名称由来。本项目的目标是通过高杠杆实现200元赚到100万元。
+        本项目只作为研究和学习使用，任何人不得已本项目进行违法犯罪活动，违者必究！投资有风险，入市需谨慎。
+      </div>
+    </div>
+
+    <div id="" style="margin-left: 16%;margin-right: 11.5%;height: 100px;margin-top: 10px; font-size: smaller;">
+      日期:	2021.09.09 14:33 <br/>
+      入金：30.95 USD<br/>
+      结余：73.62 USD<br/>
+      净利:	42.40	USD<br/>
+      收益率：141.33% <br/>
+      <a href="detail.html">交易明细>>></a>
+    </div>
+</body>
+
+</html>
